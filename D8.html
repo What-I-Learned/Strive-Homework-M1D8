@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <script>
+      /* EXERCISE 1
+      Write a function for changing the title of the document in something else.
+      */
+      let title = document.querySelector("header h1")
+      window.onload = function () {
+      const changeTitle = function (newTitle) {
+        
+        title.innerText = newTitle
+      };
+
+      /* EXERCISE 2
+      Write a function for changing the class of the title of the page in "myHeading".
+      */
+
+      const addClassToTitle = function () {
+        //
+        title.classList.add("myHeading")
+      };
+
+      /* EXERCISE 3
+      Write a function for changing the text of only the p which are children of a div.
+      */
+
+      const changePcontent = function (someText) {
+        //
+        let text = document.querySelectorAll("div p")
+        text.innerText = someText
+      };
+
+      /* EXERCISE 4
+      Write a function for changing the destination of every link to https://www.google.com
+      */
+
+      const changeUrls = function (urlAdress) {
+        //
+        let links = document.getElementsByTagName("a")
+        for(let link of links)
+        link.href = urlAdress
+      };
+      changeUrls('https://www.google.com')
+
+      /* EXERCISE 5
+       Write a function for adding a new item in the second list.
+       */
+
+      const addToTheSecond = function (content) {
+        //
+        let secondList = document.getElementById("secondList")
+        let li = document.createElement("li")
+        li.textContent = content
+        secondList.append(li)
+      };
+      addToTheSecond("Hello world")
+
+      /* EXERCISE 6
+      Write a function for adding a second paragraph to the div.
+      */
+
+      const addParagraph = function (content) {
+        //
+        let mainDiv = document.getElementById("mainContent")
+        let par = document.createElement("p")
+        par.textContent = content
+        mainDiv.append(par)
+      };
+      addParagraph("Hello Galaxy") 
+
+      /* EXERCISE 7
+      Write a function for making the first UL disappear.
+      */
+
+      const firstUlDisappear = function () {
+        //
+        let firstList = document.getElementById('firstList')
+        firstList.remove()
+      };
+      firstUlDisappear()
+
+      /* EXERCISE 8
+      Write a function for making the background of every UL green.
+      */
+
+      const paintItGreen = function () {
+        //
+        let ulist = document.querySelectorAll("main ul")
+        for(let ulist of ulist)
+        ulist.style.background = "green"
+      };
+
+      /* EXERCISE 9
+      Make the heading of the page change color every time the user clicks on it.
+      */
+
+      const makeItClickable = function () {
+        //
+        const header = document.getElementsByTagName("header")
+        console.log(header);
+        header.style.background="rgb(28,28,28)"
+        header.addEventListener('click',function(){
+          let r = Math.floor(Math.random()*256)
+          let g = Math.floor(Math.random()*256)
+          let b = Math.floor(Math.random()*256)
+          header.style.background = `rgb(${r},${g},${b})`
+        })
+
+      };
+
+      /* EXERCISE 10
+      Change the footer text with something else when the user clicks on it.
+      */
+
+      const changeFooterText = function () {
+        const footer = document.getElementsByTagName("footer")
+        const footerText = document.querySelector("footer p")
+        footer.addEventListener('click',function(){
+          console.log("Helllo");
+          footerText.innerText ="Some other text"
+        })
+        //
+      };
+
+      /* EXERCISE 11
+      Attach an event listener to the input field in the page for console logging its value just after any keystroke.
+      */
+
+      const inputField = document.getElementById("input-field");
+      inputField.addEventListener('keydown',function(e){
+        let key = e.keyCode
+        console.log(`Key ${String.fromCharCode(key)}=${key}`);
+      })
+    
+        
+      
+        
+      
+      // ...
+
+      /* EXERCISE 12
+      Create a new welcome alert message when the page successfully loads.
+      */
+        alert("Welcome To the page. Press 'OK' to continue")
+      };
+
+      /* EXERCISE 13
+      Use HTML5 tags to divide the content of the page in a more semantic way.
+      */
+    </script>
+
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </header>
+
+    <main>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="strive.school">This link goes to Strive School</a>
+
+      <div id = "mainContent">
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="input-field"
+          placeholder="input field for the exercise"
+        />
+      </div>
+    </main>
+
+    <footer>
+      <p>And this text is just for the exercise too!</p>
+    </footer>
+  </body>
+</html>
