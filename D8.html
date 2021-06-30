@@ -96,9 +96,8 @@
 
       const makeItClickable = function () {
         //
-        const header = document.getElementsByTagName("header")
-        console.log(header);
-        header.style.background="rgb(28,28,28)"
+        const header = document.getElementsByTagName("header")[0]
+        header.style.backgroundColor="rgb(28,28,28)"
         header.addEventListener('click',function(){
           let r = Math.floor(Math.random()*256)
           let g = Math.floor(Math.random()*256)
@@ -107,20 +106,20 @@
         })
 
       };
+      makeItClickable();
 
       /* EXERCISE 10
       Change the footer text with something else when the user clicks on it.
       */
 
       const changeFooterText = function () {
-        const footer = document.getElementsByTagName("footer")
+        const footer = document.getElementsByTagName("footer")[0]
         const footerText = document.querySelector("footer p")
         footer.addEventListener('click',function(){
-          console.log("Helllo");
           footerText.innerText ="Some other text"
         })
-        //
       };
+      changeFooterText()
 
       /* EXERCISE 11
       Attach an event listener to the input field in the page for console logging its value just after any keystroke.
