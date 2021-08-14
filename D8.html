@@ -125,10 +125,14 @@
       Attach an event listener to the input field in the page for console logging its value just after any keystroke.
       */
 
+      // const inputField = document.getElementById("input-field");
+      // inputField.addEventListener('keydown',function(e){
+      //   let key = e.keyCode
+      //   console.log(`Key ${String.fromCharCode(key)}=${key}`);
+      // })
       const inputField = document.getElementById("input-field");
-      inputField.addEventListener('keydown',function(e){
-        let key = e.keyCode
-        console.log(`Key ${String.fromCharCode(key)}=${key}`);
+      inputField.addEventListener('input',function(e){
+        console.log(input.value);
       })
     
         
